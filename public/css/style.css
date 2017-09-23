@@ -1,0 +1,21 @@
+body {
+    /* background-image: url("../img/2.jpg"); */
+    background: #B9B6B6;
+    background-size: 100%;
+}
+
+
+/* 
+nav {
+    opacity: 0.7;
+    filter: alpha(opacity=50);
+}
+
+nav:hover {
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+} */
+
+#signUpForm {
+    font-family: cursive;
+}
