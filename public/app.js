@@ -26,7 +26,13 @@ function signUp() {
     firebase.auth().createUserWithEmailAndPassword(user.email, user.password)
         .then(function(res) {
             database.child('user/' + res.uid).set(user).then(function() {
-                    console.log("success")
+                    alert("Signup Successfull Please login to proceed");
+                    fname.value = ""
+                    lname.value = ""
+                    email.value = ""
+                    pass.value = ""
+                    phone.value = ""
+                    age.value = ""
                 })
                 // console.log(res.uid);
         })

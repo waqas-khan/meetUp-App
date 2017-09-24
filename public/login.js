@@ -17,7 +17,7 @@ document.getElementById('signin').addEventListener('submit',
                         var convert = JSON.stringify(snapshot.val())
                         localStorage.setItem("loggedInUser", convert)
                         console.log(convert)
-                        location = "../dash/index.html"
+                        location = "dash/index.html"
                     })
                 }
             )

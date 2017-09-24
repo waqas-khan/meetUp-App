@@ -1,21 +1,76 @@
 body {
-    /* background-image: url("../img/2.jpg"); */
-    background: #B9B6B6;
+    background: #E5E3E3;
     background-size: 100%;
+    background-repeat: no-repeat;
 }
 
-
-/* 
-nav {
-    opacity: 0.7;
-    filter: alpha(opacity=50);
+.btn {
+    font-size: 120%;
+    text-align: center;
+    margin-top: 5px;
 }
 
-nav:hover {
-    opacity: 1.0;
-    filter: alpha(opacity=100);
-} */
+#eventform {
+    margin-top: 100px;
+    filter: alpha(Opacity=90);
+    opacity: 0.9;
+    border-radius: 15px 15px;
+}
 
-#signUpForm {
-    font-family: cursive;
+.btn-primary {
+    margin: 2px;
+}
+
+.btn {
+    font-size: 120%;
+    text-align: center;
+    margin-top: 5px;
+}
+
+#eventform {
+    margin-top: 100px;
+    filter: alpha(Opacity=90);
+    opacity: 0.9;
+    border-radius: 15px 15px;
+}
+
+.btn-primary {
+    margin: 2px;
+}
+
+.panelhead {
+    color: white;
+}
+
+.panelhead:hover {
+    color: white;
+    /* font-size: 120%; */
+    text-decoration: none;
+}
+
+.panelhead:active {
+    color: white;
+    font-size: 120%;
+    text-decoration: none;
+}
+
+.panelhead:visited {
+    color: white;
+    font-size: 120%;
+    text-decoration: none;
+}
+
+.panelhead:focus {
+    color: white;
+    font-size: 120%;
+    text-decoration: none;
+}
+
+.table {
+    background: white;
+    border-radius: 8px 8px;
+}
+
+.navbar-brand {
+    color: white;
 }

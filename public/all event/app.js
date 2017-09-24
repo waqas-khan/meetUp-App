@@ -40,6 +40,10 @@ database.child("event Data").on("child_added", function(snap) {
     var panelhead = document.createElement("DIV")
     panelhead.setAttribute("class", "panel-heading")
 
+    var collapse = document.createElement("div")
+    collapse.setAttribute("id", "12" + obj.key)
+    collapse.setAttribute("class", "panel-collapse collapse")
+
     var panelbody = document.createElement("DIV")
     panelbody.setAttribute("class", "panel-body")
 
@@ -49,9 +53,17 @@ database.child("event Data").on("child_added", function(snap) {
     // Panel Head
     var h4 = document.createElement("h4");
     h4.setAttribute("class", "card-title")
-    h4text = document.createTextNode("Event Name: " + Eventname.toUpperCase())
-    h4.appendChild(h4text)
+
+    var a = document.createElement("a")
+    a.setAttribute("data-toggle", "collapse")
+    a.setAttribute("class", "panelhead")
+
+    a.setAttribute("href", "#12" + obj.key)
+    atext = document.createTextNode("Event Name: " + Eventname.toUpperCase())
+    a.appendChild(atext)
+    h4.appendChild(a)
     panelhead.appendChild(h4)
+
 
     // Panel Body
     var p1 = document.createElement("P");
@@ -90,8 +102,9 @@ database.child("event Data").on("child_added", function(snap) {
     panelbody.appendChild(p3)
     panelfooter.appendChild(interestedbtn)
     panel.appendChild(panelhead)
-    panel.appendChild(panelbody)
-    panel.appendChild(panelfooter)
+    collapse.appendChild(panelbody)
+    collapse.appendChild(panelfooter)
+    panel.appendChild(collapse)
     container.appendChild(panel)
 
 
@@ -115,4 +128,8 @@ function interestedfunc(id, eventName, date, description, place, email, name) {
         alert("successfully Added to Interested Events")
 
     )
+}
+
+function signOutFunc() {
+    window.location.replace("../index.html")
 }

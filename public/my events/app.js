@@ -41,6 +41,10 @@ database.child("event Data").on("child_added", function(snap) {
         var panelhead = document.createElement("DIV")
         panelhead.setAttribute("class", "panel-heading")
 
+        var collapse = document.createElement("div")
+        collapse.setAttribute("id", "12" + obj.key)
+        collapse.setAttribute("class", "panel-collapse collapse")
+
         var panelbody = document.createElement("DIV")
         panelbody.setAttribute("class", "panel-body")
 
@@ -50,8 +54,14 @@ database.child("event Data").on("child_added", function(snap) {
         // Panel Head
         var h4 = document.createElement("h4");
         h4.setAttribute("class", "card-title")
-        h4text = document.createTextNode("Event Name: " + obj.Eventname.toUpperCase())
-        h4.appendChild(h4text)
+
+        var a = document.createElement("a")
+        a.setAttribute("data-toggle", "collapse")
+        a.setAttribute("class", "panelhead")
+        a.setAttribute("href", "#12" + obj.key)
+        atext = document.createTextNode("Event Name: " + obj.Eventname.toUpperCase())
+        a.appendChild(atext)
+        h4.appendChild(a)
         panelhead.appendChild(h4)
 
         // Panel Body
@@ -93,8 +103,9 @@ database.child("event Data").on("child_added", function(snap) {
         panelfooter.appendChild(editBtn)
         panelfooter.appendChild(deleteBtn)
         panel.appendChild(panelhead)
-        panel.appendChild(panelbody)
-        panel.appendChild(panelfooter)
+        collapse.appendChild(panelbody)
+        collapse.appendChild(panelfooter)
+        panel.appendChild(collapse)
         container.appendChild(panel)
     }
 
@@ -114,7 +125,8 @@ function editTodo(key, Ename, name, date, place, description) {
         name: neweventname,
         date: newdate,
         description: newdescription,
-        place: newplace
+        place: newplace,
+        email: user.email
     }
 
     if (newEventData !== '') { // check if the value is not empty
@@ -135,3 +147,7 @@ database.child("event Data").on("child_removed", function(data) {
     deleted.remove();
     alert("Successfully Removed")
 })
+
+function signOutFunc() {
+    window.location.replace("../index.html")
+}

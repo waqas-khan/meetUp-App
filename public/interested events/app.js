@@ -77,3 +77,7 @@ database.child("interested").on("child_removed", function(data) {
     deleted.remove();
     alert("Successfully Remove")
 })
+
+function signOutFunc() {
+    window.location.replace("../index.html")
+}

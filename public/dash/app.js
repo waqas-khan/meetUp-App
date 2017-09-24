@@ -4,7 +4,7 @@ var fname = document.getElementById("fname").innerHTML = user.firstName;
 var lname = document.getElementById("lname").innerHTML = user.lastName;
 var email = document.getElementById("email").innerHTML = user.email;
 var age = document.getElementById("age").innerHTML = user.age;
-var contact = document.getElementById("contact").innerHTML = user.contact;
+var contact = document.getElementById("contact").innerHTML = user.phone;
 
 // var user = JSON.parse(localStorage.getItem("loggedInUser"))
 console.log(user)
@@ -44,5 +44,5 @@ function submitFunc() {
 }
 
 function signOutFunc() {
-    window.location.replace("../signup/index.html")
+    window.location.replace("../index.html")
 }
